@@ -1,9 +1,11 @@
 <template>
-  <div  class="big-logo" :class="cRoute">
-    <div class="left">      
+  <div  class="header" :class="cRoute">
+    <div class="left-left">      
     </div>
-    <div class="middle">
-      <router-link to="/"><img class="logo" alt="logo" src="./../../assets/logo.svg"></router-link>
+    <div class="left-middle">
+      <router-link to="/"><img class="logo" alt="logo" src="./../../../assets/logo.svg"></router-link>
+    </div>
+    <div class="left-right">      
     </div>
     <div class="right">
       <router-link to="/library">
@@ -85,50 +87,66 @@
   };
   </script>
   
-  <style lang="scss">
-  // .route-link-active {
-  //   transition: all 1.5s ease-out;
-  // }
-  // .route-link-exact-active {
-  //   img {
-  //     height: 50px;
-  //   }    
-  // }
-  .big-logo {
-    img.logo {
-      transition: all 0.5s ease-in-out;
-      width: 80%;
+<style lang="scss">
+  .header {
+    font-size: 18px;
+    background-color: gold;
+    color: #838342;
+    opacity: 0.8;
+
+    border-radius: 0px;
+    min-height: 6em;
+    width:100%;
+    margin: 0em;
+    border: none;
+    padding: 0;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;    
+    div {
+      padding: 0.5em 0 0.5em 0;
+      // flex:1
+    }
+    .left-left {
+      flex-grow: 3;
+    }
+    .left-middle {
+      margin: 0.5em 0 0 0;
+    }
+    .left-right {
+      flex-grow: 1;
     }
     .right {
       & > a {
+        text-decoration: none;
         display:inline-block;
         position: relative;
       }
     }
+
+    img.logo {
+      transition: all 0.5s ease-in-out;
+      width:50%;
+    }
+    .lib {
+      transition: all 0.5s ease-in-out;
+      margin-top: 0em;
+    }
     span.lib {
-        transition: all 0.5s ease-in-out;
         font-size: 30px;
-        margin-top: 0em;
         position: absolute;
         top: 50px;
         left: 107px;
         color: black;
         text-align: center;
     }
-    // span.lib {
-    //   transition: all 0.5s ease-in-out;
-    //   font-size: 2.5rem;
-    //   margin-top: 0em;
-    //   position: absolute;
-    //   top: -4rem;
-    //   left: -9.45rem;
-    //   color: black;
-    //   text-align: center;
-    // }
     svg.lib {
-      transition: all 0.4s ease-in-out;
       width: 43%;
-      margin-top:0em;
       &:hover{
         & + span.lib {
           color: white;
@@ -145,48 +163,9 @@
     }
     &.page- {
       img.logo {
-        width:25%;
-      }
-      // svg.lib {
-      //   width: 25%;
-      // }
-      // span.lib {
-      //   position: absolute;
-      //   font-size: 18px;
-      //   top: 27px;
-      //   left: 124px;
-      // }    
-    }
-    opacity: 0.8;
-    font-size: 18px;
-    color: #838342;
-    // padding: 0.5em 0 0 0;
-    border-radius: 0px;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    min-height: 10em;
-    margin: 0em;
-    display: flex;
-    align-items: stretch;
-    justify-content: space-around;    
-    width:100%;
-    div {
-    padding: 0.5em 0 0 0;
-    background-color: gold;
-      flex:1
-    }
-    .left {
-    }
-    .middle {
-
-    }
-    .right {
-      & > a {
-        text-decoration: none;
+        width:80%;
       }
     }
-  }
+}
 </style>
   

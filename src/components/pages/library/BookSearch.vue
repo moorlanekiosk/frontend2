@@ -10,7 +10,7 @@
 <script>
   import { inject, computed, } from 'vue';
   import axios from 'axios';
-  import OnscreenKeyboard from './../tools/OnscreenKeyboard.vue';
+  import OnscreenKeyboard from './../parts/OnscreenKeyboard.vue';
 
   export default {
     setup()  {

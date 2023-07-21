@@ -5,9 +5,9 @@ import App from './App.vue'
 import { store } from './store';
 
 // import AboutPage from './components/pages/about/AboutPage.vue';
-import MainPage from './components/pages/MainPage.vue';
+import MainPage from './components/pages/main/MainPage.vue';
 import UserPage from './components/pages/user/UserPage.vue';
-import BookList from './components/library/BookList.vue';
+import BookList from './components/pages/library/BookList.vue';
 
 
 const routes = [

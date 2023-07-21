@@ -30,10 +30,10 @@
 // import VerticalTimeline from './components/whatson/VerticalTimeline.vue'
 // import TimeEvent from './components/whatson/TimeEvent.vue';
 // import BookList from './components/library/BookList.vue';
-import MainMenu from './components/pages/MainMenu.vue';
-import StickyHeader from './components/pages/StickyHeader.vue';
-import FixedFooter from './components/pages/FixedFooter.vue';
-import BookSearch from './components/library/BookSearch.vue';
+import MainMenu from './components/pages/parts/MainMenu.vue';
+import StickyHeader from './components/pages/parts/StickyHeader.vue';
+import FixedFooter from './components/pages/parts/FixedFooter.vue';
+import BookSearch from './components/pages/library/BookSearch.vue';
 export default {
   name: 'App',
   components: {
@@ -58,10 +58,27 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  & > .sticky-header {
+    display: flex;
+    flex-shrink: 1;
+  }
   & > .page-space {
+    display: flex;
     flex-shrink: 0;
     flex-grow: 1;
     background-color: hsla(64, 100%, 75%, 0.692);
+  }
+  & > .library {
+    display: flex;
+    flex-shrink: 1;
+  }
+  & > .page-space {
+    display: flex;
+    flex-shrink: 1;
+  }
+  & > .footer-space {
+    display: flex;
+    flex-shrink: 1;
   }
 }
 .video-container {

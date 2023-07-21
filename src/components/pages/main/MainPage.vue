@@ -47,11 +47,11 @@
 </template>
   
 <script>
-  import WhatsOn from './../whatson/WhatsOn.vue';
-  import SpecialEvents from './../whatson/SpecialEvents.vue';
-  import DisplayColumn from './../whatson/DisplayColumn.vue';
-  import VerticalTimeline from './../whatson/VerticalTimeline.vue'
-  import TimeEvent from './../whatson/TimeEvent.vue';
+  import WhatsOn from './parts/WhatsOn.vue';
+  import SpecialEvents from './parts/SpecialEvents.vue';
+  import DisplayColumn from './parts/DisplayColumn.vue';
+  import VerticalTimeline from './parts/VerticalTimeline.vue'
+  import TimeEvent from './parts/TimeEvent.vue';
 
   export default {
       components: {
