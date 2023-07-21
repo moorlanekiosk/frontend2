@@ -3,10 +3,10 @@
     <div class="left">      
     </div>
     <div class="middle">
-      <router-link to="/about"><img class="logo" alt="logo" src="./../../assets/logo.svg"></router-link>
+      <router-link to="/"><img class="logo" alt="logo" src="./../../assets/logo.svg"></router-link>
     </div>
     <div class="right">
-      <router-link to="/">
+      <router-link to="/library">
         <svg class="lib"
         version="1.1"
         x="0px"
@@ -38,13 +38,14 @@
 </template>
   
 <script>
-  import { watch, ref } from 'vue'
+  import { watch, ref, inject } from 'vue'
   import { useRoute } from 'vue-router'
 
   // import { library, dom } from '@fortawesome/fontawesome-svg-core';
   export default {
-
-      setup() {
+    setup() {
+      const store = inject('store');
+      const { updateFooter } = store;
       const route = useRoute()
       const routeChanged = ref(false);  
       const cRoute = ref('');  
@@ -54,9 +55,10 @@
       watch(
         () => route.fullPath,
         () => {
-          console.log("hit");
+          // console.log("hit");
           routeChanged.value = true;
           cRoute.value = route.path.replaceAll('/','page-');
+          updateFooter(cRoute.value);
           setTimeout(() => {
             routeChanged.value = false;
           }, 500) // Reset the flag after the transition is complete (adjust duration as needed)

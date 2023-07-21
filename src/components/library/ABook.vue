@@ -1,5 +1,5 @@
 <template>
-    <div class="cover" :style="`background-image: url('http://${host}:3000/api/image/${book.img}');`">
+    <div class="cover" :style="`background-image: url('http://${server.hostname}:${server.port}/api/${routes.image}/${book.img}');`">
         <div class="label">
             <div class="title">{{ book.title }}</div>
             <div class="author">{{ book.author }}</div>
@@ -7,17 +7,21 @@
     </div>
 </template>
 
-  <script>
+<script>
+  import { inject } from 'vue';
+
   export default {
+    setup()  {
+      const store = inject('store');
+      const { server, routes } = store.state;
+
+      return { server, routes };      
+    },
     name:"ABook",
     props:{
         "book":{
             type: Object,
             required: true
-        },
-        "host": {
-            type: String,
-            default: location.hostname
         }
     }
   };

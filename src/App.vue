@@ -12,71 +12,14 @@
         </transition>
       </router-view>
   </div>
-  <div>
+  <div class="page-space">
   </div>
-  <!-- <WhatsOn>
-    <DisplayColumn item="left-up">
-      <h2>Today</h2>
-      <VerticalTimeline>
-        <TimeEvent classa="shac left" datea="9-00am" icona="fa-book-open">
-          <h2>Shacharit</h2>
-          <p>Hodu 8.00am.</p>
-        </TimeEvent>
-        <TimeEvent classa="maariv right" datea="7-00pm" icona="fa-book-open">
-          <h2>Mincha & Maariv</h2>
-        </TimeEvent>
-      </VerticalTimeline>
-    </DisplayColumn>
-    <DisplayColumn item="left-down">
-      <SpecialEvents></SpecialEvents>
-    </DisplayColumn>
-    <DisplayColumn item="right">
-        <h2>Shabbat</h2>
-        <VerticalTimeline>
-        <TimeEvent classa="maariv left" datea="7-20pm" icona="fa-book-open">
-          <h2>Mincha & Maariv</h2>
-        </TimeEvent>
-        <TimeEvent classa="candle right" datea="7-29pm-8-42pm" icona="fa-cake-candles">
-          <h2>Candle Lighting</h2>
-        </TimeEvent>
-        <TimeEvent classa="shac left" datea="9-00am" icona="fa-book-open">
-          <h2>Shacharit</h2>
-          <p>Hodu 9.015am</p>
-        </TimeEvent>
-        <TimeEvent classa="banim right" datea="5-00pm-6-00pm" icona="fa-book-open-reader">
-          <h2>Avot uBanim</h2>
-        </TimeEvent>
-        <TimeEvent classa="mincha left" datea="7-20pm" icona="fa-book-open">
-          <h2>Mincha</h2>
-        </TimeEvent>
-        <TimeEvent classa="women right" datea="7-20pm" icona="fa-people-group">
-          <h2>Women Nach Group</h2>
-        </TimeEvent>
-        <TimeEvent classa="medical left" datea="7-20pm" icona="fa-briefcase-medical">
-          <h2>Medical Halacha & Ethics Shiur</h2>
-          <p>by Dr Hibbert</p>
-        </TimeEvent>
-      </VerticalTimeline>
-    </DisplayColumn>
-  </WhatsOn> -->
-    <!-- <BookList /> -->
-  <!-- <div>
-    <BookShelf backgroundColor="#ddd" color="#000" url="shelf">
-      <LibraryBook backgroundColor="#ff6347" color="#ffffff" url="book"></LibraryBook>
-      <LibraryBook backgroundColor="#ff6347" color="#ffffff" url="book"></LibraryBook>
-    </BookShelf> -->
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <!-- <LargeButton backgroundColor="#ff6347" color="#ffffff" url="books">Books</LargeButton> -->
-    <!-- <LargeButton backgroundColor="#2ecc71" color="#ffffff" url="shelves">Shelves</LargeButton> -->
-    <!-- <DB msg="Welcome DB!"/> -->
-  <!-- </div> -->
-  <div>
-  </div>
+  <FixedFooter>
+    <BookSearch/>
+  </FixedFooter>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
 // import DB from '../../trash/MongoDb.vue'
 // import LargeButton from './components/LargeButton.vue';
 // import WhatsOn from './components/whatson/WhatsOn.vue';
@@ -89,6 +32,8 @@
 // import BookList from './components/library/BookList.vue';
 import MainMenu from './components/pages/MainMenu.vue';
 import StickyHeader from './components/pages/StickyHeader.vue';
+import FixedFooter from './components/pages/FixedFooter.vue';
+import BookSearch from './components/library/BookSearch.vue';
 export default {
   name: 'App',
   components: {
@@ -97,7 +42,7 @@ export default {
     // DB,
     //  BookShelf, LibraryBook,
     //  DisplayColumn, TimeEvent,
-    MainMenu, StickyHeader
+    MainMenu, StickyHeader, FixedFooter, BookSearch
     //  , VerticalTimeline
     //  , BookList
   }
@@ -105,7 +50,7 @@ export default {
 
 </script>
 
-<style>
+<style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -113,6 +58,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  & > .page-space {
+    flex-shrink: 0;
+    flex-grow: 1;
+    background-color: hsla(64, 100%, 75%, 0.692);
+  }
 }
 .video-container {
   position: absolute;

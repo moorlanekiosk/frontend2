@@ -38,6 +38,7 @@
   <style scoped>
   .keyboard {
     /* Add styles for the keyboard container */
+    /* display: none; */
   }
   
   .row {

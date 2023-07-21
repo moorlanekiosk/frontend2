@@ -44,21 +44,18 @@
       </VerticalTimeline>
     </DisplayColumn>
   </WhatsOn>
-  </template>
+</template>
   
-  <script>
-import WhatsOn from './../whatson/WhatsOn.vue';
-import SpecialEvents from './../whatson/SpecialEvents.vue';
-import DisplayColumn from './../whatson/DisplayColumn.vue';
-import VerticalTimeline from './../whatson/VerticalTimeline.vue'
-import TimeEvent from './../whatson/TimeEvent.vue';
+<script>
+  import WhatsOn from './../whatson/WhatsOn.vue';
+  import SpecialEvents from './../whatson/SpecialEvents.vue';
+  import DisplayColumn from './../whatson/DisplayColumn.vue';
+  import VerticalTimeline from './../whatson/VerticalTimeline.vue'
+  import TimeEvent from './../whatson/TimeEvent.vue';
 
-export default {
-    components: {
-      WhatsOn, SpecialEvents, 
-      DisplayColumn, TimeEvent
-      , VerticalTimeline
-    }
+  export default {
+      components: {
+        WhatsOn, SpecialEvents, DisplayColumn, TimeEvent, VerticalTimeline
+      }
   };
-  </script>
-  
+</script>

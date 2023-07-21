@@ -19,7 +19,6 @@
         isSticky.value = window.scrollY > 0;
         if(isSticky.value) {
             let headr = document.querySelector('.sticky-header');
-            console.log(headr.offsetHeight);
             document.querySelector('.sticky-space').style.height = headr.offsetHeight + "px";
         } else {
             document.querySelector('.sticky-space').style.height ="0px";
