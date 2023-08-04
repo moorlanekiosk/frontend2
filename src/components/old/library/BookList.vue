@@ -1,15 +1,13 @@
 <template>
-    <div>
-      {{  searchText }}
-      <ul class="books shelf">
-          <li class="book" v-for="book in filteredBooks" :key="book.id">
-              <ABook :book="book"></ABook>
-          </li>
-      </ul>
-  </div>
+  <ul class="books shelf">
+      <li class="book" v-for="book in filteredBooks" :key="book.id">
+          <ABook :book="book"></ABook>
+      </li>
+  </ul>
 </template>
 
 <script>
+  // import BookShelf from './BookShelf.vue';
   import ABook from './ABook.vue';
   import { inject } from 'vue';
 
@@ -25,7 +23,7 @@
         const store = inject('store');
         const {searchText,  books } = store.state;
         if (!searchText) {
-          console.log("books set");
+          // console.log("books set");
           return books;
         }  
         const searchTextLower = searchText.toLowerCase();
@@ -46,6 +44,7 @@
     },
     components: {
         ABook
+        // , BookShelf
     }
   };
 </script>

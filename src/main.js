@@ -7,11 +7,12 @@ import { store } from './store';
 // import AboutPage from './components/pages/about/AboutPage.vue';
 import MainPage from './components/pages/main/MainPage.vue';
 import UserPage from './components/pages/user/UserPage.vue';
-import BookList from './components/pages/library/BookList.vue';
+// import BookList from './components/pages/library/BookList.vue';
+import LibraryView from './components/pages/library2/LibraryView.vue';
 
 
 const routes = [
-    { path: '/library', component: BookList  },
+    { path: '/library', component: LibraryView, props: { gid:0}  },
     { path: '/', component: MainPage },
     { path: '/user', component: UserPage }
 ];

@@ -14,8 +14,10 @@
   </div>
   <div class="page-space">
   </div>
+  
   <FixedFooter>
     <BookSearch/>
+    <DebugPanel/>
   </FixedFooter>
 </template>
 
@@ -33,7 +35,10 @@
 import MainMenu from './components/pages/parts/MainMenu.vue';
 import StickyHeader from './components/pages/parts/StickyHeader.vue';
 import FixedFooter from './components/pages/parts/FixedFooter.vue';
-import BookSearch from './components/pages/library/BookSearch.vue';
+import BookSearch from './components/pages/library2/BookSearch.vue';
+// import BookShelf from './components/pages/library2/BookShelf.vue';
+import DebugPanel from './components/pages/parts/DebugPanel.vue';
+
 export default {
   name: 'App',
   components: {
@@ -42,7 +47,7 @@ export default {
     // DB,
     //  BookShelf, LibraryBook,
     //  DisplayColumn, TimeEvent,
-    MainMenu, StickyHeader, FixedFooter, BookSearch
+    MainMenu, StickyHeader, FixedFooter, BookSearch, /*BookShelf, */ DebugPanel
     //  , VerticalTimeline
     //  , BookList
   }

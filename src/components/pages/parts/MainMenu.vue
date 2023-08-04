@@ -1,6 +1,7 @@
 <template>
   <div  class="header" :class="cRoute">
-    <div class="left-left">      
+    <div class="left-left">
+      <UserStatus/>
     </div>
     <div class="left-middle">
       <router-link to="/"><img class="logo" alt="logo" src="./../../../assets/logo.svg"></router-link>
@@ -42,7 +43,7 @@
 <script>
   import { watch, ref, inject } from 'vue'
   import { useRoute } from 'vue-router'
-
+  import UserStatus from './UserStatus.vue'
   // import { library, dom } from '@fortawesome/fontawesome-svg-core';
   export default {
     setup() {
@@ -83,6 +84,7 @@
     },
     components: {
       // VerticalTimeline, SpecialEvents
+      UserStatus
     }  
   };
   </script>
@@ -108,8 +110,11 @@
     display: flex;
     align-items: stretch;
     justify-content: space-around;    
-    div {
+    div.left-left, div.left-middle, div.left-right, div.right {
       padding: 0.5em 0 0.5em 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       // flex:1
     }
     .left-left {
@@ -117,9 +122,10 @@
     }
     .left-middle {
       margin: 0.5em 0 0 0;
+      flex-basis: 1;
     }
     .left-right {
-      flex-grow: 1;
+      flex-grow: 2;
     }
     .right {
       & > a {

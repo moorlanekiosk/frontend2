@@ -8,22 +8,29 @@
 </template>
 
 <script>
-  import { inject, computed, } from 'vue';
+  import { inject, computed } from 'vue';
   import axios from 'axios';
   import OnscreenKeyboard from './../parts/OnscreenKeyboard.vue';
 
   export default {
     setup()  {
       const store = inject('store');
-      const { server, routes, search } = store.state;
-      const { setBooks } = store;
+      const { search } = store.state;
+      const { setBooks, setGenres, getRoute } = store;
       // const searchText = ref(search.text);
       const handleKey = (value) => {
         store.makeWork(value);
       };
-      axios.get(`http://${server.hostname}:${server.port}/api/${routes.getAllbooks}`)
+      axios.get(getRoute("getAllbooks"))
       .then(response => {
         setBooks(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+      axios.get(getRoute("getAllgenres"))
+      .then(response => {
+        setGenres(response.data);
       })
       .catch(error => {
         console.error(error);

@@ -4,11 +4,14 @@
             <div class="title">{{ book.title }}</div>
             <div class="author">{{ book.author }}</div>
         </div>
-    </div>
+        <button @click="openPopup">Open Popup</button>
+        <Popup />
+      </div>
 </template>
 
 <script>
   import { inject } from 'vue';
+  import Popup from './PopUp.vue';
 
   export default {
     setup()  {
@@ -23,6 +26,9 @@
             type: Object,
             required: true
         }
+    },
+    components: {
+      Popup
     }
   };
   </script>

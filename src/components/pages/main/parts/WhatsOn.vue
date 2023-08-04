@@ -98,6 +98,7 @@ export default {
     min-height: 10em;
     min-width: 8em;
     margin: 0em;
+    width:100%;
     // :hover{
       // filter: brightness(0.85);
     // }

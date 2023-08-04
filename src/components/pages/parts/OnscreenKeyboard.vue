@@ -1,5 +1,5 @@
 <template>
-    <div class="keyboard">
+    <div class="keyboard" :class="{showKeys: showKeyboard()}">
       <div class="row"  v-for="row in keys" :key="row.id">
         <button class="key" @click="handleClick(key)" v-for="key in row.keys" :key="key.id" v-html="key"></button>
       </div>
@@ -7,7 +7,13 @@
 </template>
   
 <script>
+  import { inject } from 'vue';
   export default {
+    setup() {
+      const store = inject('store');
+      const { showKeyboard } = store;
+      return {showKeyboard};
+    },
     data() {
       return {
         // inputValue: '',
@@ -37,6 +43,10 @@
   
   <style scoped>
   .keyboard {
+    display: none;
+    &.showKeys {
+      display: inline-block;
+    }
     /* Add styles for the keyboard container */
     /* display: none; */
   }
